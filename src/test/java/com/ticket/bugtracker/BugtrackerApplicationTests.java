@@ -71,7 +71,7 @@ class BugtrackerApplicationTests {
         cat.setPriority(8);
 
         Ticket dog = new Ticket();
-        dog.setTitle("My dog is a BITCH");
+        dog.setTitle("My dog is a ");
         dog.setCategory("dog");
         dog.setDate(new Date());
         dog.setDescription("IKJ SDA dsfkjgndkgfj SDNKJN KJND SAA" +
@@ -110,7 +110,7 @@ class BugtrackerApplicationTests {
         cat.setPriority(8);
 
         Ticket dog = new Ticket();
-        dog.setTitle("My dog is a BITCH");
+        dog.setTitle("My dog is a dog!");
         dog.setCategory("dog");
         dog.setDate(new Date());
         dog.setDescription("IKJ SDA dsfkjgndkgfj SDNKJN KJND SAA" +
@@ -286,7 +286,7 @@ class BugtrackerApplicationTests {
         cat.setPriority(8);
         cat.setEmployee(ali);
         Ticket dog = new Ticket();
-        dog.setTitle("My dog's a bitch");
+        dog.setTitle("My dog's a dog!");
         dog.setDate(new Date());
         dog.setCategory("dog");
         dog.setDescription("I can't belive that my dog really escaped!");
@@ -305,7 +305,7 @@ class BugtrackerApplicationTests {
     void addTicketWithManager() {
         Manager ali = addManagerWithDept();
         Ticket dog = new Ticket();
-        dog.setTitle("My dog is a BITCH");
+        dog.setTitle("My dog is a dog!");
         dog.setCategory("dog");
         dog.setDate(new Date());
         dog.setDescription("IKJ SDA dsfkjgndkgfj SDNKJN KJND SAA" +
@@ -322,7 +322,7 @@ class BugtrackerApplicationTests {
     @Test
     void addTicketWithNeither() {
         Ticket dog = new Ticket();
-        dog.setTitle("My dog is a BITCH");
+        dog.setTitle("My dog is a dog!");
         dog.setCategory("dog");
         dog.setDate(new Date());
         dog.setDescription("IKJ SDA dsfkjgndkgfj SDNKJN KJND SAA" +
@@ -347,7 +347,7 @@ class BugtrackerApplicationTests {
         ticketAndEmplService.saveManager(j);
         ticketAndEmplService.saveEmpl(ali);
         Ticket dog = new Ticket();
-        dog.setTitle("My dog is a BITCH");
+        dog.setTitle("My dog is a dog!");
         dog.setCategory("dog");
         dog.setDate(new Date());
         dog.setDescription("IKJ SDA dsfkjgndkgfj SDNKJN KJND SAA" +
