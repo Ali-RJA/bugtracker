@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.Parameter;
 import javax.persistence.PersistenceContext;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -31,6 +32,16 @@ public class EmployeeDAOImpl implements EmployeeDAO{
         Employee employee = (Employee) query.uniqueResult();
 
         return employee.getID();
+    }
+
+    @Override
+    public List<Employee> findEmployeesIdByName(String name) {
+        String hql = "FROM Employee E where E.firstName = :name";
+        Session session = em.unwrap(Session.class);
+        Query query = session.createQuery(hql);
+        query.setParameter("name", name);
+        List<Employee> employees = query.list();
+        return employees;
     }
 
 }

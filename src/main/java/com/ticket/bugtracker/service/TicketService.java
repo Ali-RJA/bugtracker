@@ -1,51 +1,21 @@
 package com.ticket.bugtracker.service;
 
+import com.ticket.bugtracker.entity.Employee;
 import com.ticket.bugtracker.entity.Ticket;
-import com.ticket.bugtracker.repo.TicketChecks;
-import com.ticket.bugtracker.repo.TicketRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
-@Service
-public class TicketService {
+public interface TicketService {
 
-
-    private TicketRepository ticketRepository;
-
-    @Autowired
-    public TicketService(TicketRepository ticketRepository) {
-        this.ticketRepository = ticketRepository;
+    public List<Ticket> findAllById(Iterable<Integer> ids);
+    public Integer saveEmpl(Employee employee);
+    public Integer saveTicket(Ticket ticket);
+    public Integer closeTicket(Ticket ticket);
+    public List<Ticket> findTicketsByEmplFirstName(String empName);
+    public List<Ticket> findTicketsByDate(Date from, Date to);
+    public List<Ticket> findTicketByWildCard(String wc);
+    public List<Ticket> findTicketsDefault(int start, int max);
+    public List<Ticket> findOpenTicketsOrClosed(boolean open);
+    public List<Ticket> findTicketsByCategory(String category);
     }
-
-    public Integer saveTicket(Ticket ticket) {
-        TicketChecks tc = new TicketChecks();
-        if (!tc.ticketBothEmpty(ticket) && !tc.ticketBothTaken(ticket)) {
-            ticketRepository.save(ticket);
-        }
-        return ticket.getId();
-    }
-
-    public Integer closeTicket(Ticket ticket) {
-        TicketChecks tc = new TicketChecks();
-        if (!tc.ticketBothClosed(ticket)) {
-            ticketRepository.save(ticket);
-
-        }
-        return ticket.getId();
-    }
-
-    public List<Ticket> findAllById(Iterable<Integer> ids) {
-
-       List<Ticket> tickets = ticketRepository.findAllById(ids);
-
-       if (tickets.isEmpty()) {
-       System.out.println("NO TICKETS FOUND WITH GIVEN IDs");
-       }
-       return tickets;
-    }
-
-
-
-}

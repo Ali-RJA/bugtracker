@@ -4,24 +4,23 @@ import com.ticket.bugtracker.entity.Department;
 import com.ticket.bugtracker.entity.Employee;
 import com.ticket.bugtracker.entity.Manager;
 import com.ticket.bugtracker.entity.Ticket;
-import com.ticket.bugtracker.service.TicketAndEmplService;
+import com.ticket.bugtracker.service.EmployeeServiceImpl;
 import com.ticket.bugtracker.service.TicketService;
-import org.junit.jupiter.api.Assertions;
+import com.ticket.bugtracker.service.TicketServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.LocalDateTime;
 import java.util.*;
 
 @SpringBootTest
 class BugtrackerApplicationTests {
 
     @Autowired
-    TicketAndEmplService ticketAndEmplService;
+    private TicketService ticketService;
 
     @Autowired
-    TicketService ticketService;
+    private EmployeeServiceImpl employeeService;
 
     @Test
     void contextLoads() {
@@ -138,7 +137,7 @@ class BugtrackerApplicationTests {
         ali.setFirstName("Alisa");
         ali.setLastName("Alabbasi");
         ali.setDepartment(getDepartment());
-        ticketAndEmplService.saveEmpl(ali);
+        ticketService.saveEmpl(ali);
         return ali;
     }
 
@@ -149,7 +148,7 @@ class BugtrackerApplicationTests {
         ali.setFirstName("Jon");
         ali.setLastName("Kaka");
         ali.setDepartment(getDepartment());
-        ticketAndEmplService.saveManager(ali);
+        employeeService.saveManager(ali);
         return ali;
     }
 
@@ -164,7 +163,7 @@ class BugtrackerApplicationTests {
         ali.setFirstName(a);
         ali.setLastName(aa);
         ali.setDepartment(department);
-        ticketAndEmplService.saveEmpl(ali);
+        ticketService.saveEmpl(ali);
         return ali;
     }
 
@@ -176,7 +175,7 @@ class BugtrackerApplicationTests {
         ali.setLastName(bb);
         ali.setDepartment(department);
         department.setManager(ali);
-        ticketAndEmplService.saveManager(ali);
+        employeeService.saveManager(ali);
         return ali;
     }
     /*
@@ -202,16 +201,16 @@ class BugtrackerApplicationTests {
                 "sdfkjnsdkjf  sdf jklhsdf kjdshfkjdshfdkjsfhKJDSKJFN");
         cat.setPriority(8);
         cat.setEmployee(ali);
-        ticketAndEmplService.saveEmpl(ali);
-        ticketAndEmplService.saveTicket(cat);
+        ticketService.saveEmpl(ali);
+        ticketService.saveTicket(cat);
         Employee jj = new Employee();
         jj.setFirstName(c);
         jj.setLastName(cc);
         jj.setEmail(y);
         jj.setDepartment(ali.getDepartment());
-        ticketAndEmplService.saveEmpl(jj);
+        ticketService.saveEmpl(jj);
         cat.setEmployeeCloser(jj);
-        ticketAndEmplService.closeTicket(cat);
+        ticketService.closeTicket(cat);
 
     }
 
@@ -226,8 +225,8 @@ class BugtrackerApplicationTests {
                 "sdfkjnsdkjf  sdf jklhsdf kjdshfkjdshfdkjsfhKJDSKJFN");
         cat.setPriority(8);
         cat.setEmployee(ali);
-        ticketAndEmplService.saveEmpl(ali);
-        ticketAndEmplService.saveTicket(cat);
+        ticketService.saveEmpl(ali);
+        ticketService.saveTicket(cat);
         Manager yoyo = new Manager();
         yoyo.setFirstName(c);
         yoyo.setLastName(cc);
@@ -235,10 +234,10 @@ class BugtrackerApplicationTests {
         Department x = new Department("Coco");
         x.setManager(yoyo);
         yoyo.setDepartment(x);
-        ticketAndEmplService.saveManager(yoyo);
+        employeeService.saveManager(yoyo);
 
         cat.setManagerCloser(yoyo);
-        ticketAndEmplService.closeTicket(cat);
+        ticketService.closeTicket(cat);
     }
 
     @Test
@@ -252,8 +251,8 @@ class BugtrackerApplicationTests {
                 "sdfkjnsdkjf  sdf jklhsdf kjdshfkjdshfdkjsfhKJDSKJFN");
         cat.setPriority(8);
         cat.setEmployee(ali);
-        ticketAndEmplService.saveEmpl(ali);
-        ticketAndEmplService.saveTicket(cat);
+        ticketService.saveEmpl(ali);
+        ticketService.saveTicket(cat);
         Manager yoyo = new Manager();
         yoyo.setFirstName(c);
         yoyo.setLastName(cc);
@@ -261,16 +260,16 @@ class BugtrackerApplicationTests {
         Department x = new Department("Coco");
         x.setManager(yoyo);
         yoyo.setDepartment(x);
-        ticketAndEmplService.saveManager(yoyo);
+        employeeService.saveManager(yoyo);
         cat.setManagerCloser(yoyo);
         Employee jj = new Employee();
         jj.setFirstName(c);
         jj.setLastName(cc);
         jj.setEmail(y);
         jj.setDepartment(ali.getDepartment());
-        ticketAndEmplService.saveEmpl(jj);
+        ticketService.saveEmpl(jj);
         cat.setEmployeeCloser(jj);
-        ticketAndEmplService.closeTicket(cat);
+        ticketService.closeTicket(cat);
 
     }
 
@@ -293,8 +292,8 @@ class BugtrackerApplicationTests {
         dog.setPriority(6);
         dog.setEmployee(ali);
         //ticketAndEmplService.saveEmpl(ali);
-        ticketAndEmplService.saveTicket(cat);
-        ticketAndEmplService.saveTicket(dog);
+        ticketService.saveTicket(cat);
+        ticketService.saveTicket(dog);
         List<Integer> ids = new ArrayList<>();
         ids.add(cat.getId());
         List<Ticket> tickets = ticketsById(ids);
@@ -314,8 +313,8 @@ class BugtrackerApplicationTests {
 
         dog.setManager(ali);
         dog.setDepartment(ali.getDepartment());
-        ticketAndEmplService.saveManager(ali);
-        ticketAndEmplService.saveTicket(dog);
+        employeeService.saveManager(ali);
+        ticketService.saveTicket(dog);
 
     }
 
@@ -328,7 +327,7 @@ class BugtrackerApplicationTests {
         dog.setDescription("IKJ SDA dsfkjgndkgfj SDNKJN KJND SAA" +
                 "sdfkjnsdkjf  sdf jklhsdf kjdshfkjdshfdkjsfhKJDSKJFN");
         dog.setPriority(4);
-        ticketAndEmplService.saveTicket(dog);
+        ticketService.saveTicket(dog);
     }
 
     @Test
@@ -344,8 +343,8 @@ class BugtrackerApplicationTests {
         j.setFirstName("Jon");
         j.setLastName("Kaka");
         j.setDepartment(department);
-        ticketAndEmplService.saveManager(j);
-        ticketAndEmplService.saveEmpl(ali);
+        employeeService.saveManager(j);
+        ticketService.saveEmpl(ali);
         Ticket dog = new Ticket();
         dog.setTitle("My dog is a dog!");
         dog.setCategory("dog");
@@ -355,7 +354,7 @@ class BugtrackerApplicationTests {
         dog.setPriority(4);
         dog.setManager(j);
         dog.setEmployee(ali);
-        ticketAndEmplService.saveTicket(dog);
+        ticketService.saveTicket(dog);
     }
 
     List<Ticket> ticketsById(Iterable<Integer> ids) {

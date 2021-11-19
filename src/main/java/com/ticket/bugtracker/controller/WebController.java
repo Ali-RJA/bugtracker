@@ -2,8 +2,7 @@ package com.ticket.bugtracker.controller;
 
 import com.ticket.bugtracker.entity.Employee;
 import com.ticket.bugtracker.entity.Manager;
-import com.ticket.bugtracker.service.EmployeeService;
-import com.ticket.bugtracker.service.ManagerService;
+import com.ticket.bugtracker.service.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,14 +15,10 @@ import java.util.List;
 public class WebController {
 
     @Autowired
-    private final EmployeeService employeeService;
+    private final EmployeeServiceImpl employeeService;
 
-    @Autowired
-    private final ManagerService managerService;
-
-    public WebController(EmployeeService employeeService, ManagerService managerService) {
+    public WebController(EmployeeServiceImpl employeeService) {
         this.employeeService = employeeService;
-        this.managerService = managerService;
     }
 
     @GetMapping("/findemployees") // fubds enokiyee
@@ -39,7 +34,7 @@ public class WebController {
     }
     @PostMapping("/addmanager")
     public ResponseEntity<Integer> addManager(@RequestBody Manager manager) {
-        Integer id = managerService.saveManager(manager);
+        Integer id = employeeService.saveManager(manager);
         return new ResponseEntity<>(id, HttpStatus.CREATED);
     }
 

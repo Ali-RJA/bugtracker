@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
@@ -35,6 +36,10 @@ public class Ticket {
     @Lob
     private String description;
 
+    @Column(name="open")
+    @Type(type= "org.hibernate.type.NumericBooleanType")
+    private Boolean open=true;
+
     @ManyToOne
     @JoinColumn(name = "employee_closer", nullable = true)
     private Employee employeeCloser;
@@ -49,7 +54,7 @@ public class Ticket {
     private int priority;
 
     @Column(name = "ticket_category")
-    private String category;
+    private String category = "";
 
     @ManyToOne
     @JoinColumn(name = "department_id")
