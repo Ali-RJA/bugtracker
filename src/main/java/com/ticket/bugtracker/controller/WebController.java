@@ -26,7 +26,7 @@ public class WebController {
         this.managerService = managerService;
     }
 
-    @GetMapping("/findemployees")
+    @GetMapping("/findemployees") // fubds enokiyee
     public ResponseEntity<List<Employee>> getAllEmployees() {
         List<Employee> employees = employeeService.getEmployees();
         return new ResponseEntity<>(employees, HttpStatus.OK);
