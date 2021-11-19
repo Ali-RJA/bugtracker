@@ -32,7 +32,7 @@ public class WebController {
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
-    @PostMapping("/addemployee") // adds employee
+    @PostMapping("/addemployee") // adds employee to the database if valid
     public ResponseEntity<Integer> addEmployee(@RequestBody Employee employee) {
     Integer id = employeeService.saveEmpl(employee);
     return new ResponseEntity<>(id, HttpStatus.CREATED);
