@@ -60,9 +60,9 @@ EntityManager entityManager;
 
     @Test
     public void testThirdPrint() {
-            List<Ticket> tickets = ticketDAO.findTicketByName("Mohamed");
+            List<Ticket> tickets = ticketDAO.findTicketByName("Alisa");
             tickets.forEach(e -> {
-                System.out.println(e.getTitle());
+                System.out.println("THE TITLE IS: "+e.getTitle());
             });
 
     }
