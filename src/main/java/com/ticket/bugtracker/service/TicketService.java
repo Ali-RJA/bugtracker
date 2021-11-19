@@ -11,8 +11,13 @@ import java.util.List;
 @Service
 public class TicketService {
 
-    @Autowired
+
     private TicketRepository ticketRepository;
+
+    @Autowired
+    public TicketService(TicketRepository ticketRepository) {
+        this.ticketRepository = ticketRepository;
+    }
 
     public Integer saveTicket(Ticket ticket) {
         TicketChecks tc = new TicketChecks();
@@ -38,9 +43,7 @@ public class TicketService {
        if (tickets.isEmpty()) {
        System.out.println("NO TICKETS FOUND WITH GIVEN IDs");
        }
-
        return tickets;
-
     }
 
 
