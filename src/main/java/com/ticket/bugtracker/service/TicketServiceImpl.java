@@ -65,6 +65,16 @@ public class TicketServiceImpl implements TicketService {
         return ticket.getId();
     }
 
+    @Override
+    public List<Integer> saveTickets(List<Ticket> tickets) {
+        List<Ticket> current = ticketRepository.saveAll(tickets);
+        List<Integer> ids = new ArrayList<>();
+        for (Ticket t : current) {
+            ids.add(t.getId());
+        }
+        return ids;
+    }
+
     public Integer closeTicket(Ticket ticket) {
         TicketChecks tc = new TicketChecks();
         if (!tc.ticketBothClosed(ticket)) {

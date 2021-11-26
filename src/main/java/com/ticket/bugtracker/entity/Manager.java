@@ -1,5 +1,7 @@
 package com.ticket.bugtracker.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,6 +23,7 @@ public class Manager extends Person {
 
     @OneToMany(cascade = CascadeType.ALL,
             mappedBy = "manager")
+    @JsonBackReference
     private Set<Employee> employeeSet = new HashSet<>();
 
 
@@ -29,10 +32,12 @@ public class Manager extends Person {
 
     @OneToMany(cascade = CascadeType.ALL,
             mappedBy = "manager")
+    @JsonBackReference
     private Set<Ticket> tickets = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL,
             mappedBy = "manager")
+    @JsonBackReference
     private Set<Comment> comments;
 
     public void addTicket(Ticket ticket) {

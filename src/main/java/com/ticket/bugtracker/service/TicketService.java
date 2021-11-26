@@ -11,6 +11,7 @@ public interface TicketService {
     public List<Ticket> findAllById(Iterable<Integer> ids);
     public Integer saveEmpl(Employee employee);
     public Integer saveTicket(Ticket ticket);
+    public List<Integer> saveTickets(List<Ticket> tickets);
     public Integer closeTicket(Ticket ticket);
     public List<Ticket> findTicketsByEmplFirstName(String empName);
     public List<Ticket> findTicketsByDate(Date from, Date to);

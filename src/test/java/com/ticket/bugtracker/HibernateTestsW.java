@@ -73,7 +73,7 @@ EntityManager entityManager;
 
     @Test
     public void testFourthPrint() {
-        List<Ticket> tickets = ticketService.findTicketsByEmplFirstName("Mohamed");
+        List<Ticket> tickets = ticketService.findTicketsByEmplFirstName("Marco");
         tickets.forEach(t-> {
             Employee e = t.getEmployee();
             System.out.println("NAME: " + e.getFirstName()+ " - ID: " + e.getID() + " - TICKET: "
@@ -83,7 +83,7 @@ EntityManager entityManager;
 
     @Test
     public void testDateTicket() throws ParseException {
-        Date from = new SimpleDateFormat("yyyy-MM-dd").parse("2021-11-19");
+        Date from = new SimpleDateFormat("yyyy-MM-dd    HH:mm:ss.SSSZ").parse("2021-11-19");
         Date to = new SimpleDateFormat("yyyy-MM-dd").parse("2021-11-20");
         List<Ticket> tickets = ticketService.findTicketsByDate(from, to);
         tickets.forEach(t-> {

@@ -1,5 +1,6 @@
 package com.ticket.bugtracker.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,14 +32,17 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(name = "ticket_id", nullable = false)
+    @JsonManagedReference
     private Ticket ticket;
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
+    @JsonManagedReference
     private Employee employee;
 
     @ManyToOne
     @JoinColumn(name = "manager_id")
+    @JsonManagedReference
     private Manager manager;
 
 

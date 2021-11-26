@@ -1,0 +1,544 @@
+Manager:
+-------------------------------
+{
+ "id":"",
+ "firstName":"Frankie",
+ "lastName":"Edgar",
+ "email":"Frankboss@company.com"
+}
+
+{
+ "id":"",
+ "firstName":"John",
+ "lastName":"Cena",
+ "email":"Johnboss@company.com"
+}
+-------------------------------
+
+
+Department:
+-------------------------------
+{
+"id":"",
+"deptName":"Technology",
+"manager": {
+    "id":"2"
+}
+}
+-------------------------------
+
+
+EMPLOYEES:
+-------------------------------
+[
+
+  {
+  "id":"",
+  "firstName":"John",
+  "lastName":"Michael",
+  "email":"koko@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"2"}
+},
+  {
+  "id":"",
+  "firstName":"Abdu",
+  "lastName":"razek",
+  "email":"abdu@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"2"}
+},
+   {
+  "id":"",
+  "firstName":"Marco",
+  "lastName":"Rubio",
+  "email":"ruby@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"2"}
+},
+   {
+  "id":"",
+  "firstName":"Ali",
+  "lastName":"Mohamed",
+  "email":"Mohamed@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"2"}
+},
+   {
+  "id":"",
+  "firstName":"Luis",
+  "lastName":"Suarez",
+  "email":"LuisS89@gmail.com",
+  "department":{"id":"3"},
+  "manager":{"id":"2"}
+},
+   {
+  "id":"",
+  "firstName":"Lionel",
+  "lastName":"Messi",
+  "email":"Messi@gmail.com",
+  "department":{"id":"3"},
+  "manager":{"id":"2"}
+},
+   {
+  "id":"",
+  "firstName":"Cristiano",
+  "lastName":"Ronaldo",
+  "email":"CristRonaldo@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"2"}
+},
+   {
+  "id":"",
+  "firstName":"Barack",
+  "lastName":"Obama",
+  "email":"Obama@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"2"}
+},
+   {
+  "id":"",
+  "firstName":"Lebron",
+  "lastName":"James",
+  "email":"LebronJames@gmail.com",
+  "department":{"id":"3"},
+  "manager":{"id":"1"}
+},    {
+  "id":"",
+  "firstName":"Bebo",
+  "lastName":"Alab",
+  "email":"Alabebo@outlook.com",
+  "department":{"id":"3"},
+  "manager":{"id":"1"}
+},    {
+  "id":"",
+  "firstName":"Eden",
+  "lastName":"Hazard",
+  "email":"Edenhazard99@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"1"}
+},
+   {
+  "id":"",
+  "firstName":"Karim",
+  "lastName":"Benzema",
+  "email":"Karim8RM@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"1"}
+},
+   {
+  "id":"",
+  "firstName":"Jordi",
+  "lastName":"Alba",
+  "email":"Jordi14FCB@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"1"}
+},
+   {
+  "id":"",
+  "firstName":"Kisembo",
+  "lastName":"Okeke",
+  "email":"Okeke7878@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"1"}
+},
+   {
+  "id":"",
+  "firstName":"Venetia",
+  "lastName":"Papaioannou",
+  "email":"PapaVene789@hotmail.com",
+  "department":{"id":"3"},
+  "manager":{"id":"1"}
+},
+   {
+  "id":"",
+  "firstName":"Marco",
+  "lastName":"Rubio",
+  "email":"ruby@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"1"}
+},
+   {
+  "id":"",
+  "firstName":"Pèire",
+  "lastName":"Margarida",
+  "email":"pma8712@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"1"}
+},
+   {
+  "id":"",
+  "firstName":"Antonietta",
+  "lastName":"Dioli",
+  "email":"AntyDio444@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"1"}
+},    {
+  "id":"",
+  "firstName":"Marco",
+  "lastName":"Rubio",
+  "email":"ruby@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"1"}
+},
+   {
+  "id":"",
+  "firstName":"Franco",
+  "lastName":"James",
+  "email":"JamesFranco@yahoo.com",
+  "department":{"id":"3"},
+  "manager":{"id":"1"}
+},
+   {
+  "id":"",
+  "firstName":"Conor",
+  "lastName":"McGreggor",
+  "email":"thenotoriousmma@gmail.com",
+  "department":{"id":"3"},
+  "manager":{"id":"1"}
+}
+
+]
+-------------------------------
+
+
+Tickets:
+-------------------------------
+[
+   {
+"id":"",
+"title": "Button doesn't work",
+"date": "2021-11-26 03:19:24",
+"description":"Button doesn't reload page when clicked",
+"open":"true",
+"priority":"9",
+"category":"Component Functionality",
+"department":{"id":"3"},
+"employee":{"id":"16"}
+},
+   {
+"id":"",
+"title": "Missing Color on some components",
+"date": "2021-11-20 04:21:24",
+"description":"Some of the colors are not present.",
+"open":"true",
+"priority":"6",
+"category":"Theming",
+"department":{"id":"3"},
+"employee":{"id":"12"}
+},
+   {
+"id":"",
+"title": "Screen size is incorrect",
+"date": "2021-08-26 03:19:24",
+"description":"Components are not scaling properly",
+"open":"true",
+"priority":"10",
+"category":"Component Functionality",
+"department":{"id":"3"},
+"employee":{"id":"13"}
+},
+   {
+"id":"",
+"title": "The website runs slow on some features",
+"date": "2021-01-26 03:19:24",
+"description":"Some of the features are implemented poorly",
+"open":"true",
+"priority":"4",
+"category":"Component Functionality",
+"department":{"id":"3"},
+"employee":{"id":"14"}
+},
+   {
+"id":"",
+"title": "I don't like the theme",
+"date": "2021-04-26 03:19:24",
+"description":"The colors mismatch, and the theme is unappealing.",
+"open":"true",
+"priority":"2",
+"category":"Theming",
+"department":{"id":"3"},
+"employee":{"id":"15"}
+},
+   {
+"id":"",
+"title": "Security is weak",
+"date": "2019-10-26 03:19:24",
+"description":"The security used is not good enough to protect user information.",
+"open":"true",
+"priority":"10",
+"category":"Security",
+"department":{"id":"3"},
+"employee":{"id":"10"}
+},
+   {
+"id":"",
+"title": "Website freezes suddenly",
+"date": "2020-07-26 03:19:24",
+"description":"The website seems to not work sometimes and freezes.",
+"open":"false",
+"priority":"6",
+"category":"Component Functionality",
+"department":{"id":"3"},
+"employee":{"id":"16"},
+"employeeCloser":{"id":"11"}
+},
+   {
+"id":"",
+"title": "Homepage doesn't reload",
+"date": "2021-11-21 03:19:24",
+"description":"Homepage doesn't load up during navigation.",
+"open":"true",
+"priority":"9",
+"category":"Component Functionality",
+"department":{"id":"3"},
+"employee":{"id":"18"}
+},
+   {
+"id":"",
+"title": "Monitor doesn't work",
+"date": "2021-11-26 03:19:24",
+"description":"Monitor doesn't turn on!",
+"open":"true",
+"priority":"9",
+"category":"Device",
+"department":{"id":"3"},
+"employee":{"id":"20"}
+},
+   {
+"id":"",
+"title": "Keyboard doesn't type correctly",
+"date": "2021-10-04 03:19:24",
+"description":"Keyboard doesn't work as intended when being typed on.",
+"open":"true",
+"priority":"1",
+"category":"Device",
+"department":{"id":"3"},
+"employee":{"id":"17"}
+},
+   {
+"id":"",
+"title": "Microphone doesn't work properly",
+"date": "2021-07-26 03:19:24",
+"description":"I don't know why this happens but the mic doesn't work",
+"open":"true",
+"priority":"6",
+"category":"Device",
+"department":{"id":"3"},
+"employee":{"id":"18"}
+},
+   {
+"id":"",
+"title": "Wifi is slow",
+"date": "2021-05-26 03:19:24",
+"description":"The internet is slow",
+"open":"true",
+"priority":"2",
+"category":"Device",
+"department":{"id":"3"},
+"employee":{"id":"21"},
+"employeeCloser":{"id":"10"}
+},
+   {
+"id":"",
+"title": "Headphones are too loud",
+"date": "2021-04-11 03:19:24",
+"description":"The headphones are too loud and should be fixed",
+"open":"true",
+"priority":"5",
+"category":"Device",
+"department":{"id":"3"},
+"employee":{"id":"21"}
+},
+   {
+"id":"",
+"title": "The calculator needs new batteries",
+"date": "2021-09-10 03:19:24",
+"description":"There should be new batteries somewhere.",
+"open":"true",
+"priority":"9",
+"category":"Device",
+"department":{"id":"3"},
+"employee":{"id":"22"}
+},
+   {
+"id":"",
+"title": "Information on users has been leaked",
+"date": "2021-11-01 03:19:24",
+"description":"User information has been leaked and must be fixed",
+"open":"true",
+"priority":"10",
+"category":"Security",
+"department":{"id":"3"},
+"employee":{"id":"22"}
+},
+   {
+"id":"",
+"title": "I want a fancy phone from the company",
+"date": "2021-11-16 03:19:24",
+"description":"I feel like I deserve a new phone",
+"open":"true",
+"priority":"1",
+"category":"Device",
+"department":{"id":"3"},
+"employee":{"id":"23"},
+"employeeCloser":{"id":"21"}
+},
+   {
+"id":"",
+"title": "The space is too small",
+"date": "2020-09-26 03:19:24",
+"description":"I need more space in my office",
+"open":"true",
+"priority":"5",
+"category":"Other",
+"department":{"id":"3"},
+"employee":{"id":"23"}
+},
+   {
+"id":"",
+"title": "Database isn't storing information in the correct format",
+"date": "2021-08-20 03:19:24",
+"description":"Date format is incorrect",
+"open":"true",
+"priority":"9",
+"category":"Component Functionality",
+"department":{"id":"3"},
+"employee":{"id":"24"}
+},
+   {
+"id":"",
+"title": "Computer needs to be rerun to work properly",
+"date": "2021-11-26 03:19:24",
+"description":"Restart all computers",
+"open":"true",
+"priority":"4",
+"category":"Device",
+"department":{"id":"3"},
+"employee":{"id":"24"}
+},
+   {
+"id":"",
+"title": "Collaborate on the software",
+"date": "2021-09-14 03:19:24",
+"description":"The team work needs more work, 'wE ArE a fAmiLY'",
+"open":"true",
+"priority":"1",
+"category":"Other",
+"department":{"id":"3"},
+"manager":{"id":"1"}
+},
+   {
+"id":"",
+"title": "Refactor the code to a new framework called Spring MVC",
+"date": "2021-01-10 03:19:24",
+"description":"The current framework is outdated",
+"open":"true",
+"priority":"2",
+"category":"Component Functionality",
+"department":{"id":"3"},
+"employee":{"id":"4"}
+},
+   {
+"id":"",
+"title": "Web controller needs to have an interface",
+"date": "2021-02-20 03:19:24",
+"description":"Add an interface and implement it correctly",
+"open":"true",
+"priority":"8",
+"category":"Component Functionality",
+"department":{"id":"3"},
+"employee":{"id":"4"}
+},
+   {
+"id":"",
+"title": "Servers are running slow",
+"date": "2021-02-01 03:19:24",
+"description":"Servers need to be updated to work right",
+"open":"true",
+"priority":"7",
+"category":"Other",
+"department":{"id":"3"},
+"employee":{"id":"5"}
+},
+   {
+"id":"",
+"title": "Only part of the website runs without errors",
+"date": "2021-03-04 03:19:24",
+"description":"There needs to be more tests to confirm validity",
+"open":"true",
+"priority":"4",
+"category":"Component Functionality",
+"department":{"id":"3"},
+"employee":{"id":"5"}
+},
+   {
+"id":"",
+"title": "Z-score calculated is wrong",
+"date": "2021-04-18 03:19:24",
+"description":"The calculator needs to be checked.",
+"open":"true",
+"priority":"5",
+"category":"Component Functionality",
+"department":{"id":"3"},
+"employee":{"id":"6"}
+},
+   {
+"id":"",
+"title": "A new database should be used",
+"date": "2021-01-19 03:19:24",
+"description":"Current database is too old",
+"open":"true",
+"priority":"9",
+"category":"Other",
+"department":{"id":"3"},
+"employee":{"id":"7"}
+},
+   {
+"id":"",
+"title": "Login form is not working",
+"date": "2021-02-14 03:19:24",
+"description":"Login form should be reimplemented",
+"open":"true",
+"priority":"1",
+"category":"Security",
+"department":{"id":"3"},
+"employee":{"id":"8"}
+},
+   {
+"id":"",
+"title": "Ethernet cables are not working",
+"date": "2021-06-20 03:19:24",
+"description":"We should switch to WIFI",
+"open":"true",
+"priority":"2",
+"category":"Device",
+"department":{"id":"3"},
+"employee":{"id":"9"}
+},
+   {
+"id":"",
+"title": "Games should be removed",
+"date": "2021-08-10 03:19:24",
+"description":"No one should play video games",
+"open":"true",
+"priority":"10",
+"category":"Other",
+"department":{"id":"3"},
+"employee":{"id":"10"}
+},
+   {
+"id":"",
+"title": "Jboss is not working right",
+"date": "2021-07-11 03:19:24",
+"description":"The tool is malfunctioning",
+"open":"true",
+"priority":"8",
+"category":"Component Functionality",
+"department":{"id":"3"},
+"employee":{"id":"11"}
+}
+]
+-------------------------------
+
+

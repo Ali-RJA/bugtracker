@@ -1,13 +1,16 @@
 package com.ticket.bugtracker.service;
 
+import com.ticket.bugtracker.entity.Department;
 import com.ticket.bugtracker.entity.Employee;
 import com.ticket.bugtracker.entity.Manager;
 import com.ticket.bugtracker.entity.Ticket;
+import com.ticket.bugtracker.repo.DepartmentRepository;
 import com.ticket.bugtracker.repo.EmployeeRepository;
 import com.ticket.bugtracker.repo.ManagerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -21,6 +24,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
     private ManagerRepository managerRepository;
+
+    @Autowired
+    private DepartmentRepository departmentRepository;
 
     public Integer saveEmpl(Employee employee) {
 
@@ -45,6 +51,22 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
     public Optional<Employee> findById(Integer id) {
         return employeeRepository.findById(id);
+    }
+
+    @Override
+    public List<Integer> saveEmployees(List<Employee> employees) {
+        List<Integer> integers = new ArrayList<>();
+        List<Employee> employeesSaved = employeeRepository.saveAll(employees);
+        for (Employee e : employeesSaved) {
+            integers.add(saveEmpl(e));
+        }
+        return integers;
+    }
+
+    @Override
+    public Integer saveDepartment(Department department) {
+        Department current = departmentRepository.save(department);
+        return current.getId();
     }
 
 }

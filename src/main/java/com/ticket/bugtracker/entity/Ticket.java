@@ -1,5 +1,10 @@
 package com.ticket.bugtracker.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,7 +32,8 @@ public class Ticket {
     @Column(name = "ticket_title")
     private String title;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "ticket_date")
     private Date date;
 
@@ -42,10 +48,12 @@ public class Ticket {
 
     @ManyToOne
     @JoinColumn(name = "employee_closer", nullable = true)
+    @JsonManagedReference
     private Employee employeeCloser;
 
     @ManyToOne
     @JoinColumn(name = "manager_closer", nullable = true)
+    @JsonManagedReference
     private Manager managerCloser;
 
     @Column(name = "ticket_priority")
@@ -58,18 +66,25 @@ public class Ticket {
 
     @ManyToOne
     @JoinColumn(name = "department_id")
+    @JsonManagedReference
+    @JsonIgnoreProperties({"id"})
     private Department department;
 
     @ManyToOne
     @JoinColumn()
+    @JsonManagedReference // includes this object
+    @JsonIgnoreProperties({"department","manager"})
     private Employee employee;
 
     @ManyToOne
     @JoinColumn(name = "manager_id")
+    @JsonManagedReference
+    @JsonIgnoreProperties({"department"}) // ignores specific properties of this object
     private Manager manager;
 
     @OneToMany(cascade = CascadeType.ALL,
             mappedBy = "ticket")
+    @JsonBackReference // ignores this object completely
     private Set<Comment> comments = new HashSet<>();
 
 
